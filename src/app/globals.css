@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-jetbrains-mono);
+}
+/* colors that I'd like part of  the scheme
+385e3c green. use for headers and titles. 
+6eaa6e light green use for popping the primary text out. 
+0a0e12 black, but like less. Background 
+dcb070 light tan. ecru?. use for regular / descriptive fonts */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0e12;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
