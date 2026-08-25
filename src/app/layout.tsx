@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Fira_Code, Fira_Mono, JetBrains_Mono } from "next/font/google";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jetBrainsMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`--font-mono h-full antialiased`}>
+      <body className={`${jetBrainsMono.className} min-h-full flex flex-col`}>
         <Header />
-        {children}
+        <main className="m-3">{children}</main>
         <Footer />
       </body>
     </html>

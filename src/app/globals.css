@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #171717;
   --foreground: #171717;
+  --primary-green: #385e3c;
+  --standard-font: #dcb070;
+  --highlight-font: #6eaa6e;
 }
+/* colors that I'd like part of  the scheme
+0a0e12 black, but like less. Background 
+6eaa6e light green use for popping the big header text. 
+385e3c green. use for headers and titles. 
+dcb070 orangeish. use for regular / descriptive fonts */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: var(--font-jetbrains-mono);
+  --color-primary-green: var(--primary-green);
+  --color-highlight-font: var(--highlight-font);
+  --color-standard-font: var(--standard-font);
 }
-/* colors that I'd like part of  the scheme
-385e3c green. use for headers and titles. 
-6eaa6e light green use for popping the primary text out. 
-0a0e12 black, but like less. Background 
-dcb070 light tan. ecru?. use for regular / descriptive fonts */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -28,4 +34,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+/* contain header and footer */
+main {
+  flex-grow: 1;
+}
+footer {
+  border-top: 1px solid var(--primary-green);
 }
