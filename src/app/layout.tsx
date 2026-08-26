@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`--font-mono h-full antialiased`}>
       <body className={`${jetBrainsMono.className} min-h-full flex flex-col`}>
         <Header />
-        <main className="m-3">{children}</main>
+        <main className=" flex flex-row m-5 min-h-full">{children}</main>
         <Footer />
       </body>
     </html>
