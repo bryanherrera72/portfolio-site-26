@@ -81,7 +81,7 @@ export default function Page() {
             </span>
             <span>
               <a
-                href="bryan.herrera72@gmail.com"
+                href="https://www.linkedin.com/in/bryanherreradev/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

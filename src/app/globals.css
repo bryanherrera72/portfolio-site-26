@@ -17,7 +17,6 @@
   --color-primary-green: var(--primary-green);
   --color-highlight-font: var(--highlight-font);
   --color-standard-font: var(--standard-font);
-  --color-alt-white: var(--alt-white);
 }
 
 @media (prefers-color-scheme: dark) {
