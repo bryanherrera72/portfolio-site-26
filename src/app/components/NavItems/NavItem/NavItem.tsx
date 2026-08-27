@@ -5,7 +5,7 @@ interface NavItemProps {
 }
 export default function NavItem({ title, link, val }: NavItemProps) {
   return (
-    <div className="flex flex-row gap-1">
+    <div className="flex flex-row gap-2">
       <p className="text-highlight-font">[{val}]</p>
       <p className="text-standard-font">{title}</p>
       {link}
