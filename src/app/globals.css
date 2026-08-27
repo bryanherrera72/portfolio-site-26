@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
+/* TODO: clean up the naming on these to make more sense */
 :root {
-  --background: #171717;
-  --foreground: #171717;
-  --primary-green: #385e3c;
-  --standard-font: #dcb070;
-  --highlight-font: #6eaa6e;
+  --background: #171717; /*black, but like less. Background */
+  --foreground: #a8b68d;
+  /* --alt-white: #a8b68d; Use as an alternate to the stinging white, has a slight green tint to it. */
+  --primary-green: #385e3c; /* green. use for headers and titles. */
+  --standard-font: #dcb070; /* dcb070 orangeish. use for regular / descriptive fonts */
+  --highlight-font: #6eaa6e; /*light green use for popping the big header text. */
 }
-/* colors that I'd like part of  the scheme
-0a0e12 black, but like less. Background 
-6eaa6e light green use for popping the big header text. 
-385e3c green. use for headers and titles. 
-dcb070 orangeish. use for regular / descriptive fonts */
 
 @theme inline {
   --color-background: var(--background);
@@ -20,12 +17,13 @@ dcb070 orangeish. use for regular / descriptive fonts */
   --color-primary-green: var(--primary-green);
   --color-highlight-font: var(--highlight-font);
   --color-standard-font: var(--standard-font);
+  --color-alt-white: var(--alt-white);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0e12;
-    --foreground: #ededed;
+    --background: #171717;
+    --foreground: #a8b68d;
   }
 }
 
@@ -45,4 +43,31 @@ main {
 }
 footer {
   border-top: 1px solid var(--primary-green);
+}
+
+/* borrowed from https://deloughry.co.uk/field-notes/building-glitch-effects-with-css/#crt-scan-lines */
+.crt-filter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.25) 2px,
+    rgba(0, 0, 0, 0.25) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+  animation: crt-scanline-flicker 0.08s steps(2) infinite;
+}
+
+@keyframes crt-scanline-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.92;
+  }
 }
