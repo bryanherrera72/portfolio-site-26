@@ -47,7 +47,9 @@ footer {
 /* borrowed from https://deloughry.co.uk/field-notes/building-glitch-effects-with-css/#crt-scan-lines */
 .crt-filter::before {
   content: "";
-  position: absolute;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
@@ -70,3 +72,4 @@ footer {
     opacity: 0.92;
   }
 }
+

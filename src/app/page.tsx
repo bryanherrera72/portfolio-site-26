@@ -1,5 +1,8 @@
 import { Geist_Pixel } from "next/font/google";
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa6";
+import Image from 'next/image'
+import PlaceHolder from '../../public/placeholder.png' // Might need to fix this. I want a static import I just don't like the path.
+
 const geistPixel = Geist_Pixel({
   subsets: ["latin"],
   variable: "--font-geist-pixel",
@@ -25,6 +28,7 @@ export default function Page() {
             View my work (container here){">"}
           </div>
         </div>
+
         {/* SUMMARY DETAIL WINDOW */}
         <div className="flex flex-col justify-between flex-1 m-8 max-h-120 border border-primary-green rounded-sm">
           {/* Summary Detail header */}
@@ -49,7 +53,7 @@ export default function Page() {
               <span>los angeles, ca</span>
               <span>5+ years</span>
               <span>open to work</span>
-              <span>full stack web development</span>
+              <span>full stack web development.</span>
             </div>
           </div>
           {/* Bottom quick links */}
@@ -96,7 +100,17 @@ export default function Page() {
       </div>
 
       {/* DETAILED ABOUT ME SECTION */}
-      <div className="text-highlight-font text-2xl">About Me</div>
+      <span className="flex flex-col">
+        <div className="text-highlight-font text-3xl">About Me_</div>
+        <div className="flex flex-row min-h-full">
+          
+          {/* My picture */}
+          <div className="flex flex-col flex-1 items-center m-8 p-15 gap-5 border"><Image className="w-xl" src={PlaceHolder} alt = "My Pic"/></div>
+
+          {/* About me description */}
+          <div className = "flex-1 m-8 border">About me content goes here.</div>
+        </div>
+      </span>
     </>
   );
 }

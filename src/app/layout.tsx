@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className={`${jetBrainsMono.className} min-h-full flex flex-col crt-filter`}
       >
         <Header />
-        <main className="flex flex-col pl-10 pr-10 m-5">{children}</main>
+        <main className="flex flex-col pl-10 pr-10 m-5 gap-5">{children}</main>
         <Footer />
       </body>
     </html>
